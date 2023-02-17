@@ -1,9 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Dashboard extends JFrame {
+public class Dashboard extends JFrame implements ActionListener {
 
-    Dashboard(){
+    String username;
+    JButton addPersonalDetails;
+
+    Dashboard(String username){
+        this.username = username;
         //setBounds(0,0,1600,1000);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setLayout(null);
@@ -34,12 +40,13 @@ public class Dashboard extends JFrame {
         p2.setBackground(new Color(0,0,102));
         add(p2);
 
-        JButton addPersonalDetails = new JButton("Add Personal Details");
+        addPersonalDetails = new JButton("Add Personal Details");
         addPersonalDetails.setBounds(0,0,300,50);
         addPersonalDetails.setBackground(new Color(0,0,120));
         addPersonalDetails.setForeground(Color.WHITE);
         addPersonalDetails.setFont(new Font("Tahoma",Font.PLAIN,20));
         addPersonalDetails.setMargin(new Insets(0,0,0,40));
+        addPersonalDetails.addActionListener(this);
         p2.add(addPersonalDetails);
 
         JButton updatePersonalDetails = new JButton("Update Personal Details");
@@ -173,7 +180,15 @@ public class Dashboard extends JFrame {
         setVisible(true);
     }
 
+    public void actionPerformed(ActionEvent ae){
+        if(ae.getSource() == addPersonalDetails){
+            new AddCustomer(username);
+        }else {
+
+        }
+    }
+
     public static void main(String []args){
-        new Dashboard();
+        new Dashboard("");
     }
 }
