@@ -1,3 +1,4 @@
+import javax.print.attribute.standard.Destination;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -6,7 +7,7 @@ import java.awt.event.ActionListener;
 public class Dashboard extends JFrame implements ActionListener {
 
     String username;
-    JButton addPersonalDetails,viewPersonalDetails,updatePersonalDetails,checkpackages, bookpackage,viewpackage;
+    JButton addPersonalDetails,viewPersonalDetails,updatePersonalDetails,checkpackages, bookpackage,viewpackage,viewhotels, destinations;
 
     Dashboard(String username){
         this.username = username;
@@ -101,12 +102,13 @@ public class Dashboard extends JFrame implements ActionListener {
         viewpackage.addActionListener(this);
         p2.add(viewpackage);
 
-        JButton viewhotels = new JButton("View Hotels");
+        viewhotels = new JButton("View Hotels");
         viewhotels.setBounds(0,350,300,50);
         viewhotels.setBackground(new Color(0,0,120));
         viewhotels.setForeground(Color.WHITE);
         viewhotels.setFont(new Font("Tahoma",Font.PLAIN,20));
         viewhotels.setMargin(new Insets(0,0,0,110));
+        viewhotels.addActionListener(this);
         p2.add(viewhotels);
 
         JButton bookhotel = new JButton("Book Hotel");
@@ -125,12 +127,13 @@ public class Dashboard extends JFrame implements ActionListener {
         viewbookhotel.setMargin(new Insets(0,0,0,70));
         p2.add(viewbookhotel);
 
-        JButton destinations = new JButton("Destinations");
+        destinations = new JButton("Destinations");
         destinations.setBounds(0,500,300,50);
         destinations.setBackground(new Color(0,0,120));
         destinations.setForeground(Color.WHITE);
         destinations.setFont(new Font("Tahoma",Font.PLAIN,20));
         destinations.setMargin(new Insets(0,0,0,100));
+        destinations.addActionListener(this);
         p2.add(destinations);
 
         JButton payment = new JButton("Payment");
@@ -197,6 +200,10 @@ public class Dashboard extends JFrame implements ActionListener {
             new BookPackage(username);
         }else if(ae.getSource() == viewpackage){
             new ViewPackage(username);
+        }else if(ae.getSource() == viewhotels){
+            new CheckHotels();
+        }else if(ae.getSource() == destinations){
+            new Destinations();
         }
     }
 
