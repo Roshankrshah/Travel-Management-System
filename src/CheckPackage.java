@@ -7,7 +7,7 @@ public class CheckPackage extends JFrame {
     CheckPackage(){
         setBounds(450,200,900,600);
 
-        String [] package1 = {"GOLD PACKAGE","6 Days and 7 Nights","Airport Assistance","Half Day City Tour","Daily Buffet","Soft Drinks Free","Full Day 3 Island Cruise","English Speaking Guide","BOOK PACKAGE","SUMMER SPECIAL","Rs 44000/-","package1.jpg"};
+        String [] package1 = {"GOLD PACKAGE","6 Days and 7 Nights","Airport Assistance","Half Day City Tour","Daily Buffet","Soft Drinks Free","Full Day 3 Island Cruise","English Speaking Guide","BOOK PACKAGE","SUMMER SPECIAL","Rs 40000/-","package1.jpg"};
         String [] package2 = {"SLIVER PACKAGE","5 Days and 6 Nights","Toll Free","Entrance Free Tickets","Meet and Greet at Airport","Welcome Drink on Arrival","Night Safari","Cruise with Dinner","BOOK NOW","WINTER SPECIAL","Rs 32000/-","package2.jpg"};
         String [] package3 = {"BRONZE PACKAGE","4 Days and 5 Nights","Return Airfare","Free Clubbing, Horse Riding & other Game","RiverRafting","Hard Drinks Free","Daily Buffet","BBQ Dinner","BOOK NOW","WINTER SPECIAL","Rs 24000/-","package3.jpg"};
 
