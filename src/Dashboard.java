@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 public class Dashboard extends JFrame implements ActionListener {
 
     String username;
-    JButton addPersonalDetails,viewPersonalDetails,updatePersonalDetails,checkpackages, bookpackage,viewpackage,viewhotels, destinations, bookhotel,viewbookhotel, payment,calculator,notepad,about;
+    JButton addPersonalDetails,viewPersonalDetails,updatePersonalDetails,checkpackages, bookpackage,viewpackage,viewhotels, destinations, bookhotel,viewbookhotel, payment,calculator,notepad,about,deletePersonalDetails;
 
     Dashboard(String username){
         this.username = username;
@@ -56,6 +56,7 @@ public class Dashboard extends JFrame implements ActionListener {
         updatePersonalDetails.setForeground(Color.WHITE);
         updatePersonalDetails.setFont(new Font("Tahoma",Font.PLAIN,20));
         updatePersonalDetails.setMargin(new Insets(0,0,0,20));
+        updatePersonalDetails.addActionListener(this);
         p2.add(updatePersonalDetails);
 
         viewPersonalDetails = new JButton("View Personal Details");
@@ -67,12 +68,13 @@ public class Dashboard extends JFrame implements ActionListener {
         viewPersonalDetails.addActionListener(this);
         p2.add(viewPersonalDetails);
 
-        JButton deletePersonalDetails = new JButton("Delete Personal Details");
+        deletePersonalDetails = new JButton("Delete Personal Details");
         deletePersonalDetails.setBounds(0,150,300,50);
         deletePersonalDetails.setBackground(new Color(0,0,120));
         deletePersonalDetails.setForeground(Color.WHITE);
         deletePersonalDetails.setFont(new Font("Tahoma",Font.PLAIN,20));
         deletePersonalDetails.setMargin(new Insets(0,0,0,20));
+        deletePersonalDetails.addActionListener(this);
         p2.add(deletePersonalDetails);
 
         checkpackages = new JButton("Check Packages");
@@ -228,6 +230,8 @@ public class Dashboard extends JFrame implements ActionListener {
             }
         }else if(ae.getSource() == about){
                 new About();
+        }else if(ae.getSource() == deletePersonalDetails){
+            new DeleteDetails(username);
         }
     }
 

@@ -116,7 +116,7 @@ public class ViewPackage extends JFrame implements ActionListener {
     }
 
     public static void main(String [] args){
-        new ViewPackage("pank123");
+        new ViewPackage("");
     }
 }
 

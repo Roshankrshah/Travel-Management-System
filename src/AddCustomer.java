@@ -11,9 +11,10 @@ public class AddCustomer extends JFrame implements ActionListener {
     JTextField tfnumber,tfcountry,tfaddress,tfemail,tfphone;
     JRadioButton rmale, rfemale;
     JButton add,back;
+    String username;
 
     AddCustomer(String username){
-
+        this.username = username;
         setBounds(450,200,850,550);
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
@@ -124,7 +125,7 @@ public class AddCustomer extends JFrame implements ActionListener {
 
         try{
             Conn c = new Conn();
-            ResultSet rs = c.s.executeQuery("select * from account where username = 'pank123'");
+            ResultSet rs = c.s.executeQuery("select * from account where username = '"+username+"'");
             while(rs.next()){
                 labelusername.setText(rs.getString("username"));
                 labelname.setText(rs.getString("name"));

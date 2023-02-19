@@ -9,8 +9,10 @@ public class UpdateCustomer extends JFrame implements ActionListener {
     JLabel labelusername,labelname;
     JTextField tfnumber,tfcountry,tfaddress,tfemail,tfphone,tfid,tfgender;
     JButton add,back;
+    String username;
 
     UpdateCustomer(String username){
+        this.username = username;
 
         setBounds(500,200,850,550);
         setLayout(null);
@@ -133,7 +135,6 @@ public class UpdateCustomer extends JFrame implements ActionListener {
         }
 
         setVisible(true);
-
     }
 
     public void actionPerformed(ActionEvent ae){
