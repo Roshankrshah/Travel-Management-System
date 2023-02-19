@@ -13,6 +13,11 @@ public class ViewCustomer extends JFrame implements ActionListener {
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
 
+        JLabel text = new JLabel("Your Details");
+        text.setBounds(300,10,200,25);
+        text.setFont(new Font("Tahoma", Font.BOLD,20));
+        add(text);
+
         JLabel lblusername = new JLabel("Username");
         lblusername.setBounds(30,50,150,25);
         add(lblusername);
@@ -88,7 +93,7 @@ public class ViewCustomer extends JFrame implements ActionListener {
         back = new JButton("Back");
         back.setBackground(Color.BLACK);
         back.setForeground(Color.WHITE);
-        back.setBounds(350,350,100,25);
+        back.setBounds(325,350,100,25);
         back.addActionListener(this);
         add(back);
 

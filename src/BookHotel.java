@@ -169,10 +169,10 @@ public class BookHotel extends JFrame implements ActionListener {
         add(back);
 
         ImageIcon i1 = new ImageIcon("D:\\Travel Management System\\icons\\book.jpg");
-        Image i2 = i1.getImage().getScaledInstance(600,300,Image.SCALE_DEFAULT);
+        Image i2 = i1.getImage().getScaledInstance(590,500,Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         JLabel l1 = new JLabel(i3);
-        l1.setBounds(500,50,600,300);
+        l1.setBounds(500,50,590,500);
         add(l1);
 
         setVisible(true);

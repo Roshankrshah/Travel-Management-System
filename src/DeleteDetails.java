@@ -15,6 +15,11 @@ public class DeleteDetails extends JFrame implements ActionListener {
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
 
+        JLabel text = new JLabel("Your Details");
+        text.setBounds(300,10,200,25);
+        text.setFont(new Font("Tahoma", Font.BOLD,20));
+        add(text);
+
         JLabel lblusername = new JLabel("Username");
         lblusername.setBounds(30,50,150,25);
         add(lblusername);
@@ -90,7 +95,7 @@ public class DeleteDetails extends JFrame implements ActionListener {
         delete = new JButton("Delete");
         delete.setBackground(Color.BLACK);
         delete.setForeground(Color.WHITE);
-        delete.setBounds(350,350,100,25);
+        delete.setBounds(325,350,100,25);
         delete.addActionListener(this);
         add(delete);
 

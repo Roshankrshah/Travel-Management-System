@@ -19,6 +19,11 @@ public class AddCustomer extends JFrame implements ActionListener {
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
 
+        JLabel text = new JLabel("Fill Your Details");
+        text.setBounds(100,10,200,25);
+        text.setFont(new Font("Tahoma", Font.BOLD,20));
+        add(text);
+
         JLabel lblusername = new JLabel("Username");
         lblusername.setBounds(30,50,150,25);
         add(lblusername);
@@ -156,12 +161,17 @@ public class AddCustomer extends JFrame implements ActionListener {
             String phone  = tfphone.getText();
 
             try{
-                Conn  c = new Conn();
-                String query = "insert into customer values('"+username+"' ,'"+id+"' , '"+number+"' , '"+name+"' ,'"+gender+"' , '"+country+"' ,'"+address+"' ,'"+phone+"' , '"+email+"')";
-                c.s.executeUpdate(query);
+                if(id.equals("")||number.equals("")||country.equals("")||phone.equals("")){
+                    JOptionPane.showMessageDialog(null,"Some Field(s) Missing");
+                }
+                else {
+                    Conn c = new Conn();
+                    String query = "insert into customer values('" + username + "' ,'" + id + "' , '" + number + "' , '" + name + "' ,'" + gender + "' , '" + country + "' ,'" + address + "' ,'" + phone + "' , '" + email + "')";
+                    c.s.executeUpdate(query);
 
-                JOptionPane.showMessageDialog(null,"Customer Details Added Successfully");
-                setVisible(false);
+                    JOptionPane.showMessageDialog(null, "Customer Details Added Successfully");
+                    setVisible(false);
+                }
             }catch (Exception e){
                 System.out.println(e);
             }

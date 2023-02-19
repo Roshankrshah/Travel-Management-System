@@ -8,7 +8,8 @@ import java.sql.ResultSet;
 public class Login extends JFrame implements ActionListener {
 
     JButton password,signup,login;
-    JTextField tfusername,tfpassword;
+    JTextField tfusername;
+    JPasswordField tfpassword;
 
     Login(){
         setSize(900,400);
@@ -50,7 +51,7 @@ public class Login extends JFrame implements ActionListener {
         lblpassword.setFont(new Font("SAN_SERIF",Font.PLAIN,20));
         p2.add(lblpassword);
 
-        tfpassword = new JTextField();
+        tfpassword = new JPasswordField();
         tfpassword.setBounds(60,150,300,30);
         tfpassword.setBorder(BorderFactory.createEmptyBorder());
         p2.add(tfpassword);

@@ -19,12 +19,12 @@ public class Payment extends JFrame implements ActionListener {
         add(image);
 
         pay = new JButton(("Pay"));
-        pay.setBounds(420,0,80,40);
+        pay.setBounds(300,0,80,40);
         pay.addActionListener(this);
         image.add(pay);
 
         back = new JButton("Back");
-        back.setBounds(520,0,80,40);
+        back.setBounds(400,0,80,40);
         back.addActionListener(this);
         image.add(back);
 

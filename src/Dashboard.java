@@ -3,11 +3,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 
 public class Dashboard extends JFrame implements ActionListener {
 
     String username;
-    JButton addPersonalDetails,viewPersonalDetails,updatePersonalDetails,checkpackages, bookpackage,viewpackage,viewhotels, destinations, bookhotel,viewbookhotel, payment,calculator,notepad,about,deletePersonalDetails;
+    JButton addPersonalDetails,viewPersonalDetails,updatePersonalDetails,checkpackages, bookpackage,viewpackage,viewhotels, destinations, bookhotel,viewbookhotel, payment,calculator,notepad,about,deletePersonalDetails,logout;
 
     Dashboard(String username){
         this.username = username;
@@ -34,6 +35,13 @@ public class Dashboard extends JFrame implements ActionListener {
         heading.setFont(new Font("Tahoma",Font.BOLD,30));
         p1.add(heading);
 
+        logout = new JButton("Logout");
+        logout.setBounds(1400,10,100,35);
+        logout.setBackground(new Color(0,0,120));
+        logout.setForeground(Color.WHITE);
+        logout.setFont(new Font("Tahoma",Font.PLAIN,20));
+        logout.addActionListener(this);
+        p1.add(logout);
 
         JPanel p2 = new JPanel();
         p2.setLayout(null);
@@ -195,7 +203,20 @@ public class Dashboard extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ae){
         if(ae.getSource() == addPersonalDetails){
-            new AddCustomer(username);
+            try{
+                Conn c = new Conn();
+                ResultSet rs = c.s.executeQuery("select number from customer where username = '"+username+"'");
+                if(rs.next()){
+                    JOptionPane.showMessageDialog(null,"Your Details Already Added");
+                    new ViewCustomer(username);
+                }
+                else{
+                    new AddCustomer(username);
+                }
+            }catch(Exception e){
+                System.out.println(e);
+            }
+
         }else if(ae.getSource() == viewPersonalDetails){
             new ViewCustomer(username);
         }else if(ae.getSource() == updatePersonalDetails){
@@ -232,6 +253,9 @@ public class Dashboard extends JFrame implements ActionListener {
                 new About();
         }else if(ae.getSource() == deletePersonalDetails){
             new DeleteDetails(username);
+        }else if(ae.getSource() == logout){
+            setVisible(false);
+            new Login();
         }
     }
 
