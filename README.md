@@ -48,3 +48,10 @@ It also connected with payment gateway to pay the amount and also connected with
 
 # Payment
 ![image](https://user-images.githubusercontent.com/91787844/219945435-e983f1fe-dcc4-4e94-8893-1d3350e442ba.png)
+
+# ER Diagram
+![image](https://user-images.githubusercontent.com/91787844/220037594-9ce53202-30e0-43e7-a9ad-6ef319d82e3a.png)
+
+#Relational Schema
+![image](https://user-images.githubusercontent.com/91787844/220037662-fb71dac0-6523-45b1-9486-9f4de6ad670b.png)
+
